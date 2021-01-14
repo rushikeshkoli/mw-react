@@ -12,7 +12,7 @@ phases:
       - sam --version
       # Installing project dependencies
       # - cd hello-world
-      # - npm install
+      - npm install
   
   pre_build:
     commands:
