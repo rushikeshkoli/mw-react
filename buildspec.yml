@@ -29,4 +29,5 @@ artifacts:
   discard-paths: yes
   files:
     # List of local artifacts that will be passed down the pipeline
-    - build/*/**
+    - '**/*'
+  base-directory: build
