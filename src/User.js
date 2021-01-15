@@ -21,7 +21,7 @@ function User() {
 
   useEffect(() => {
     async function fetchUser() {
-      const res = await axios.get(`http://localhost:8080/user/${userId}`);
+      const res = await axios.get(`${process.env.REACT_APP_DOMAIN}/user/${userId}`);
       console.log(res);
       // setUsers(res.data.users)
     }

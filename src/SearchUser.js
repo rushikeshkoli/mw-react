@@ -12,7 +12,7 @@ function SearchUser() {
   };
   const handleSubmit = async(e) => {
     e.preventDefault();
-    const res = await axios.post('http://localhost:8080/search', {
+    const res = await axios.post(`${process.env.REACT_APP_DOMAIN}/search`, {
       'username': name
     })
     console.log(res)
