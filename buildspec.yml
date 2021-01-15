@@ -26,8 +26,7 @@ phases:
       - npm run build
 
 artifacts:
-  discard-paths: yes
   files:
     # List of local artifacts that will be passed down the pipeline
     - '**/*'
-  base-directory: build
+  base-directory: 'build/'
