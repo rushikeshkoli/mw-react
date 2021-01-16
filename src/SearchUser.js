@@ -15,6 +15,7 @@ function SearchUser() {
     const res = await axios.post(`${process.env.REACT_APP_DOMAIN}/search`, {
       'username': name
     })
+    history.push(`/user/${res.data.user.userId}`)
     console.log(res)
   };
 

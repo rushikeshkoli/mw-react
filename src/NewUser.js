@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import axios from 'axios'
+import { useHistory } from "react-router";
 
 function NewUser() {
+  let history = useHistory();
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [isEditing, setIsEditing] = useState(false);
@@ -11,9 +14,19 @@ function NewUser() {
   const handleDescChange = (e) => {
     setDesc(e.target.value);
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
+    const res = await axios.post(`${process.env.REACT_APP_DOMAIN}/add`, {
+      'username': name,
+      'desc': desc
+    })
+    console.log(res)
     setIsEditing(false)
+    if(res.data.message === 'failure') {
+      alert('user already present')
+    } else {
+      history.push(`/user/${res.data.user.userId}`)
+    }
   }
   return (
     <div>

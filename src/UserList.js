@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import SearchUser from "./SearchUser";
+
+import NewUser from "./NewUser";
 
 function UserList() {
   const [users, setUsers] = useState([]);
@@ -22,6 +25,8 @@ function UserList() {
   }, []);
   return (
     <div>
+      <SearchUser />
+      <NewUser />
       <h2>UserList</h2>
       {allUsers}
     </div>
