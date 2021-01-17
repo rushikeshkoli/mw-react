@@ -3,7 +3,7 @@ import "./App.css";
 import UserList from "./UserList";
 import User from "./User";
 import Header from "./Header";
-import { Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
